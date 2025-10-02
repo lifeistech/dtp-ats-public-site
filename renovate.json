@@ -1,0 +1,20 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["@lifeistech/dtp-ats-*"],
+      "groupName": "ATS packages",
+      "automerge": true,
+      "automergeType": "pr"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "automergeType": "pr"
+    }
+  ],
+  "schedule": ["before 3am on Monday"],
+  "timezone": "Asia/Tokyo",
+  "labels": ["dependencies"],
+  "assignees": ["@team-ats"]
+}
