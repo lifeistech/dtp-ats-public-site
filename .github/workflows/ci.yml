@@ -1,7 +1,9 @@
-name: PR Check
+name: CI
 
 on:
   pull_request:
+    branches: [develop, main]
+  push:
     branches: [develop, main]
 
 jobs:
@@ -23,6 +25,9 @@ jobs:
 
       - name: Run type check
         run: npm run type-check
+
+      - name: Run tests
+        run: npm test
 
       - name: Build
         run: npm run build
